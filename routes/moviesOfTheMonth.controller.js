@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
   });
   res.json(moviesOfTheMonth);
 });
+
 router.post("/add", async (req, res) => {
   const movie = await Movie.findByPk(req.body.movie_id);
   await movie.createMovieOfTheMonth();

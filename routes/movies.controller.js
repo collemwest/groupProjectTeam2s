@@ -1,4 +1,5 @@
 const express = require("express");
+const { Op } = require("sequelize");
 const router = express.Router();
 const db = require("../models");
 const { Movie, User } = db.sequelize.models;
@@ -34,4 +35,13 @@ router.post("/create", async (req, res) => {
   });
   res.json(newMovies);
 });
+
+router.get("/genre/:genre", async (req, res) => {
+  const movieByGenre = await Movie.findAll({
+    where: { genre: req.params.genre },
+    attributes: { exclude: ["createdAt", "updatedAt"] },
+  });
+  res.json(movieByGenre);
+});
+
 module.exports = router;

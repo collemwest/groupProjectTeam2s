@@ -1,6 +1,6 @@
 # Getting Started with Retro Cinema (server side)
 
-Clone the project (client side) from [GitHub](https://github.com/collemwest/groupProjectTeam2s).\
+Clone the project (server side) from [GitHub](https://github.com/collemwest/groupProjectTeam2s).\
 Start with `npm install`.
 Create an .env file in the root directory with the following contents:
 
